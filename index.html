@@ -6,63 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <script>
-        let pcScore = 0
-        let playerScore = 0
-
-        function getComputerChoice() {
-            const pcChoice = Math.floor(Math.random() * 3 + 1);
-            return pcChoice
-        }
-
-        function playerSelection() {
-            let playerChoice = prompt("Choose between rock, paper or scissors")
-            playerChoice = playerChoice.toLowerCase()
-            return playerChoice
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            console.log(computerSelection)
-            if (playerSelection === 'rock' && computerSelection === 2) {
-                pcScore++
-                console.log( "You chose rock and computer chose paper! Computer won!")
-            } else if (playerSelection === 'rock' && computerSelection === 3) {
-                playerScore++
-                console.log( "You chose rock and computer chose scissors! You won!")
-            } else if (playerSelection === 'paper' && computerSelection === 1) {
-                playerScore++
-                console.log( "You chose paper and computer chose rock! You won!")
-            } else if (playerSelection === 'paper' && computerSelection === 3) {
-                pcScore++
-                console.log( "You chose paper and computer chose scissors! Computer won!")
-            } else if (playerSelection === 'scissors' && computerSelection === 1) {
-                pcScore++
-                console.log( "You chose scissors and computer chose rock! Computer Won!")
-            } else if (playerSelection === 'scissors' && computerSelection === 2) {
-                playerScore++
-                console.log( "You chose scissors and computer chose paper! You won!")
-            } else {
-                console.log( "It's a tie!")
-            }
-        }
-
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                console.log(playRound(playerSelection(), getComputerChoice()))
-            }
-            if (playerScore > pcScore) {
-                return (`Your score is ${playerScore} vs ${pcScore}! You won!`)
-            } else if (pcScore > playerScore) {
-                return (`Your score is ${playerScore} vs ${pcScore}! You lost!`)
-            } else {
-                return (`It's a draw! the scores are ${playerScore} and ${pcScore}`)
-            }
-        }
-        console.log(game())
-    </script>
+    <div class='buttons'>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
 </body>
 
 </html>

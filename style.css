@@ -1,0 +1,13 @@
+* {
+    background-color: black;
+}
+.buttons {
+    display:flex;
+    justify-content: space-around;
+    
+}
+button {
+    background-color: white;
+    padding: 15px 32px;
+    border-radius: 10%;
+}
