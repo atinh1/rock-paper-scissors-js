@@ -20,54 +20,60 @@ scissors.addEventListener('click', () => {
     playRound(playerSelection, getComputerChoice())
 })
 
+const statustxt = document.querySelector('.statustxt')
+const scores = document.querySelector('.scores')
+
 function getComputerChoice() {
     const pcChoice = Math.floor(Math.random() * 3 + 1);
     return pcChoice
 }
 
-/*function playerSelection() {
-    let playerChoice
-    rock.addEventListener('click', () => {
-        playerChoice = 'rock'
-    })
-    return playerChoice
-}*/
-
 function playRound(playerSelection, computerSelection) {
-    console.log(computerSelection)
     if (playerSelection === 'rock' && computerSelection === 2) {
         pcScore++
-        console.log( "You chose rock and computer chose paper! Computer won!")
+        scores.textContent = "Your score: " + playerScore + " Computer Score: " +pcScore
+        statustxt.textContent = "You chose rock and computer chose paper! Computer won!"
+        checkScores()
     } else if (playerSelection === 'rock' && computerSelection === 3) {
         playerScore++
-        console.log( "You chose rock and computer chose scissors! You won!")
+        scores.textContent = "Your score: " + playerScore + " Computer Score: " +pcScore
+        statustxt.textContent = "You chose rock and computer chose scissors! You won!"
+        checkScores()
     } else if (playerSelection === 'paper' && computerSelection === 1) {
         playerScore++
-        console.log( "You chose paper and computer chose rock! You won!")
+        scores.textContent = "Your score: " + playerScore + " Computer Score: " +pcScore
+        statustxt.textContent = "You chose paper and computer chose rock! You won!"
+        checkScores()
     } else if (playerSelection === 'paper' && computerSelection === 3) {
         pcScore++
-        console.log( "You chose paper and computer chose scissors! Computer won!")
+        scores.textContent = "Your score: " + playerScore + " Computer Score: " +pcScore
+        statustxt.textContent = "You chose paper and computer chose scissors! Computer won!"
+        checkScores()
     } else if (playerSelection === 'scissors' && computerSelection === 1) {
         pcScore++
-        console.log( "You chose scissors and computer chose rock! Computer Won!")
+        scores.textContent = "Your score: " + playerScore + " Computer Score: " +pcScore
+        statustxt.textContent = "You chose scissors and computer chose rock! Computer Won!"
+        checkScores()
     } else if (playerSelection === 'scissors' && computerSelection === 2) {
         playerScore++
-        console.log( "You chose scissors and computer chose paper! You won!")
+        scores.textContent = "Your score: " + playerScore + " Computer Score: " +pcScore
+        statustxt.textContent = "You chose scissors and computer chose paper! You won!"
+        checkScores()
     } else {
-        console.log( "It's a tie!")
+        statustxt.textContent = "It's a tie!"
+        scores.textContent = "Your score: " + playerScore + " Computer Score: " +pcScore
     }
 }
-
-/*function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound(playerSelection(), getComputerChoice()))
-    }
-    if (playerScore > pcScore) {
-        return (`Your score is ${playerScore} vs ${pcScore}! You won!`)
-    } else if (pcScore > playerScore) {
-        return (`Your score is ${playerScore} vs ${pcScore}! You lost!`)
-    } else {
-        return (`It's a draw! the scores are ${playerScore} and ${pcScore}`)
+function checkScores(){
+    if (playerScore == 5) {
+        statustxt.textContent = "You Won!"
+        scores.textContent = ""
+        pcScore = 0
+        playerScore = 0
+    }else if (pcScore == 5) {
+        statustxt.textContent = "Computer Won!"
+        scores.textContent = ""
+        playerScore = 0
+        pcScore = 0
     }
 }
-console.log(game()) */

@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+body {
+    font-family: 'Roboto', 'Times New Roman', sans-serif;
+}
 * {
     background-color: black;
 }
-.buttons {
-    display:flex;
-    justify-content: space-around;
-    
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+    gap: 50px;
 }
+
 button {
     background-color: white;
     padding: 15px 32px;
     border-radius: 10%;
+}
+.scores,
+.statustxt,
+.maintxt {
+    color: white;
 }
