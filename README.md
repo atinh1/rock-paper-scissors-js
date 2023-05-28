@@ -1,5 +1,5 @@
 Rock Paper Scissors in js
 
-Rock paper scissors game written entirely in javascript and played in the console
+Basic rock paper scissors browser game with an interface
 
-Will update it later and add an user interface
+Will improve later
